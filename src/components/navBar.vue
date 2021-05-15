@@ -1,22 +1,22 @@
 
 <template>
-  <v-bottom-navigation v-model='value' :background-color='color' grow app>
-    <v-btn value='home' to='/' color='blue-grey'>
+  <v-bottom-navigation v-model='value' color="teal" grow app>
+    <v-btn value='home' to='/'>
       <span>Home</span>
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn value='planning' to='/planning' color='teal'>
+    <v-btn value='planning' to='/planning'>
       <span>Planning</span>
       <v-icon>mdi-calendar</v-icon>
     </v-btn>
 
-    <v-btn value='courses' to='/courses' color='brown'>
+    <v-btn value='courses' to='/courses'>
       <span>Courses</span>
       <v-icon>mdi-basket</v-icon>
     </v-btn>
 
-    <v-btn value='about' to='/about' color='indigo'>
+    <v-btn value='about' to='/about'>
       <span>About</span>
       <v-icon>mdi-information-outline</v-icon>
     </v-btn>
@@ -29,21 +29,9 @@
 </style>
 
 <script lang='ts'>
-// TO FIX : Color background problem
+
 export default {
-  data: () :{value:string} => ({ value: 'planning' }),
-  computed: {
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    color () {
-      switch (this.value) {
-        case 'home': return 'blue-grey'
-        case 'planning': return 'teal'
-        case 'courses': return 'brown'
-        case 'about': return 'indigo'
-        default: return 'blue-grey'
-      }
-    }
-  }
+  data: () :{value:string} => ({ value: 'planning' })
 }
 
 </script>

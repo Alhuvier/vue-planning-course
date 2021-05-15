@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
+import PageNotFound from '@/views/PageNotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,21 @@ const routes: Array<RouteConfig> = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/planning',
+    name: 'Planning',
+    component: () => import(/* webpackChunkName: "planning" */ '../views/Planning.vue')
+  },
+  {
+    path: '/courses',
+    name: 'Courses',
+    component: () => import(/* webpackChunkName: "courses" */ '../views/Courses.vue')
+  },
+  {
+    path: '/:catchAll(.*)*',
+    name: 'PageNotFound',
+    component: PageNotFound
   }
 ]
 
